@@ -2,7 +2,9 @@
   "name":"Back Office Adventure DX v10",
   "short_name":"BO Adventure",
   "start_url":"./",
+  "scope":"./",
   "display":"standalone",
+  "orientation":"landscape",
   "background_color":"#071421",
   "theme_color":"#071421",
   "icons":[
