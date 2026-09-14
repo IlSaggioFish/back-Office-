@@ -2,7 +2,7 @@
 'use strict';
 
 (function initMobileOrientation(){
-  const isTouch=()=>matchMedia?.('(pointer:coarse)')?.matches||navigator.maxTouchPoints>0;
+  const isTouch=()=>window.matchMedia?.('(pointer:coarse)')?.matches||navigator.maxTouchPoints>0;
   const isPortrait=()=>innerHeight>innerWidth;
   const gameVisible=()=>{const g=document.querySelector('#game');return !!g&&!g.classList.contains('hidden');};
 
@@ -45,9 +45,7 @@
     const skipped=sessionStorage.getItem('boPortraitSkip')==='1';
     hint?.classList.toggle('show',active&&isPortrait()&&!skipped);
     if(active&&!isPortrait())sessionStorage.removeItem('boPortraitSkip');
-    if(active&&!isPortrait()){
-      setTimeout(()=>document.querySelector('#canvas')?.focus?.(),30);
-    }
+    if(active&&!isPortrait())setTimeout(()=>document.querySelector('#canvas')?.focus?.(),30);
   }
 
   // Segui i cambi menu/partita senza toccare il motore di gioco.
@@ -57,12 +55,6 @@
   addEventListener('orientationchange',()=>setTimeout(syncMobileLayout,180),{passive:true});
   document.addEventListener('fullscreenchange',syncMobileLayout);
   document.addEventListener('webkitfullscreenchange',syncMobileLayout);
-
-  // Previene zoom accidentale sui doppi tap dei controlli touch senza bloccare i menu.
-  document.addEventListener('touchend',e=>{
-    if(!document.body.classList.contains('bo-mobile-game'))return;
-    if(e.target.closest?.('.controls button,.ga button,#joy'))e.preventDefault();
-  },{passive:false});
 
   syncMobileLayout();
 })();
