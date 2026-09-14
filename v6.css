@@ -1,0 +1,8 @@
+/* DX v6 - scenari */
+.header .logo span{color:#8fe8ff;text-shadow:0 0 22px #59d7ff55}
+.header .sub{max-width:760px;margin-left:auto;margin-right:auto;line-height:1.45}
+.node small span{font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.shell{box-shadow:0 18px 60px #0008,0 0 0 1px #70dfff14 inset}
+#canvas{image-rendering:auto}
+.scenarioNote{font-size:8px;color:#9fd8ef}
+@media(max-width:560px){.header .sub{font-size:10px}.node{min-height:98px}}
