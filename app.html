@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#071421">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BO Adventure">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="stylesheet" href="./style.css?v=4">
+<title>Back Office Adventure DX v4</title>
+</head>
+<body>
+<div class="wrap">
+<header class="header"><div class="logo">BACK OFFICE<span>ADVENTURE DX v4</span></div><div class="sub">Combo operative, caffè turbo, telegraph dei boss, fullscreen e riavvio rapido. Più leggibile su telefono e più cattivo quando fai bene. Una normalissima escalation aziendale.</div></header>
+
+<section id="menu" class="panel">
+  <div class="stats">
+    <div class="stat">Livelli<b id="stLevel">1/5</b></div><div class="stat">Record<b id="stBest">0</b></div>
+    <div class="stat">Marche<b id="stStamp">0</b></div><div class="stat">Michele<b id="stMichele">🔒</b></div>
+  </div>
+  <div class="sec">Mappa</div><div id="map" class="map"></div>
+  <div class="sec">Progressi</div><div id="progressGrid" class="progressgrid"></div>
+  <div class="sec">Personaggi</div><div id="roster" class="roster"></div>
+  <div class="actions">
+    <button id="start" class="primary" disabled>Seleziona livello e personaggio</button>
+    <button id="audio" class="secondary">🔊 Audio</button><button id="ngplus" class="secondary ngplus hidden">🔥 NG+ OFF</button><button id="install" class="secondary hidden">📲 Installa</button>
+  </div>
+  <div class="note">Controlli PC: A/D o ←/→, SPAZIO/↑ per saltare, X per abilità. Su telefono trovi i quattro pulsanti sotto il gioco. Michele si sblocca completando Fine Mese.</div>
+</section>
+
+<section id="game" class="panel gamepanel hidden">
+  <div class="hud">
+    <div class="hb">Punti<b id="score">0</b></div><div class="hb">Vite<div id="lifeFaces" class="lifeFaces"></div></div><div class="hb">Marche<b id="stamps">0</b></div>
+    <div class="hb">Combo<b id="combohud">x1</b></div><div class="hb">Scudo<b id="shield">0</b></div><div class="hb">Livello<b id="lvhud">1</b></div><div class="hb">Tempo<b id="timehud">0:00</b></div><div class="hb">Eroe<b id="charhud">-</b></div>
+  </div>
+  <div class="shell">
+    <canvas id="canvas" width="960" height="540"></canvas>
+    <div class="topoverlay"><div id="levelPill" class="pill"></div><div id="bossPill" class="pill"></div></div>
+    <div id="msg" class="msg"></div><div id="tutorialBubble" class="tutorialBubble hidden"></div>
+  </div>
+  <div id="status" class="status">Caricamento...</div>
+  <div class="controls">
+    <button id="left">◀</button><button id="jump" class="jump">SALTO</button><button id="ability" class="ability">ABILITÀ<span id="cd" class="cd">PRONTA</span></button><button id="right">▶</button>
+  </div>
+  <div class="ga"><button id="pause" class="secondary">☕ Pausa</button><button id="restart" class="secondary">↻ Riavvia</button><button id="full" class="secondary">⛶ Schermo</button><button id="back" class="secondary">↩ Menu</button></div>
+</section>
+</div>
+
+<div id="cutscene" class="modal hidden"><div class="mcard"><img id="cutFace" class="cutface"><div id="cutTitle" class="sec"></div><div id="cutLine" class="cutline"></div><button id="cutGo" class="primary">Affronta il boss</button></div></div>
+<div id="gameover" class="modal hidden"><div class="mcard"><img id="delFace" class="bigface"><h2 style="color:#ff7183">GAME OVER</h2><div class="quote">“Vai a farti un bidet e sali in ufficio da me.”</div><p id="goText"></p><div class="actions"><button id="retry" class="primary">Riprova</button><button id="gomenu" class="secondary">Menu</button></div></div></div>
+<div id="clear" class="modal hidden"><div class="mcard"><div id="stars" class="stars">★★★</div><h2 id="clearTitle">Livello completato</h2><div id="results" class="resultgrid"></div><div id="unlock" class="unlock hidden">👑 MICHELE SBLOCCATO<br>Il Responsabile è ora disponibile in modalità OP.</div><div id="ngUnlock" class="unlock hidden">🔥 NEW GAME+ SBLOCCATO<br>Nemici più rapidi, boss più cattivi, punteggi maggiorati.</div><div class="actions"><button id="next" class="primary">Livello successivo</button><button id="creditsBtn" class="primary hidden">Titoli di coda</button><button id="cmenu" class="secondary">Menu</button></div></div></div>
+<div id="credits" class="modal hidden"><div class="mcard"><img id="creditsFace" class="creditsFace"><h2>BACK OFFICE ADVENTURE DX v4</h2><div class="creditsList"><b>Cast giocabile</b><br>Eugenio · Farris · Yurii · Luca · Tiziano · Daniele · Dalila · Giada · Michele<br><br><b>Boss</b><br>Mengozzi · Gervasi<br><br><b>Game Over Department</b><br>Del Vecchio<br><br><b>Oggetti leggendari</b><br>Caffè · Marca da bollo €16 · NTW · Smart Working</div><div class="quote">“Bravi. Però c’è un’altra cosa da fare.”</div><button id="creditsMenu" class="primary">Torna al menu</button></div></div>
+<script src="./bootstrap.js?v=4" defer></script>
+</body>
+</html>
