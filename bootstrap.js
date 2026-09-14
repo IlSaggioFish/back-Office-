@@ -18,6 +18,10 @@
       try{localStorage.setItem(FACE_CACHE,JSON.stringify(faces));}catch(e){}
     }
     window.FACE_DATA=faces;
-    for(const src of ['./core.js?v=5','./menu.js?v=5','./gameplay.js?v=5','./render.js?v=5','./main.js?v=5','./v5a.js?v=5','./v5b.js?v=5','./v5c.js?v=5','./v5d.js?v=5'])await load(src);
+    for(const src of [
+      './core.js?v=5','./menu.js?v=5','./gameplay.js?v=5','./render.js?v=5','./main.js?v=5',
+      './v5a.js?v=5','./v5b.js?v=5','./v5c.js?v=5','./v5d.js?v=5',
+      './v6a.js?v=6','./v6b.js?v=6','./v6c.js?v=6'
+    ])await load(src);
   }catch(err){console.error(err);fail(err.message||String(err));}
 })();
