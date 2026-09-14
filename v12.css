@@ -1,0 +1,38 @@
+/* BACK OFFICE ADVENTURE DX v12 - GRAPHICS OVERHAUL */
+body.v12Graphics{background:radial-gradient(circle at 50% -10%,#163a56 0,#07131f 48%,#03080d 100%)}
+body.v12Graphics .header .logo span{letter-spacing:.14em;text-shadow:0 0 18px #63dfff55}
+body.v12Graphics #canvas{image-rendering:pixelated;image-rendering:crisp-edges;background:#07131d;border-radius:14px;box-shadow:0 16px 50px #000a,0 0 0 1px #4c6d8255 inset}
+body.v12Graphics .shell{background:linear-gradient(180deg,#0b1b29,#050d14);border:1px solid #476579;border-radius:16px;box-shadow:0 18px 55px #0009,inset 0 0 0 1px #a2dfff10}
+body.v12Graphics .hud{gap:6px;align-items:stretch}
+body.v12Graphics .hud .hb{position:relative;overflow:hidden;min-width:76px;border:2px solid #4f7187;border-radius:9px;background:linear-gradient(180deg,#132b3d 0,#081722 100%);box-shadow:inset 0 1px 0 #d4f5ff18,0 5px 14px #0006;padding:5px 8px;color:#8fb1c4;font-family:ui-monospace,Consolas,monospace;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+body.v12Graphics .hud .hb::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#8ce9ff10,transparent 38%,transparent 70%,#ffffff08);pointer-events:none}
+body.v12Graphics .hud .hb b{position:relative;display:block;color:#f4fbff;font-family:ui-monospace,Consolas,monospace;font-size:16px;line-height:1.05;text-shadow:0 0 8px #61dfff33}
+body.v12Graphics .lifeFaces{display:flex;gap:3px;margin-top:2px}
+body.v12Graphics .lifeFaces img{width:20px;height:20px;border-radius:4px;border:1px solid #6bdfff;box-shadow:0 0 8px #46cfff33;object-fit:cover}
+body.v12Graphics .superHb{border-color:#c69a39!important;background:linear-gradient(180deg,#3d3116,#151107)!important;box-shadow:inset 0 1px 0 #fff3a522,0 0 14px #ffc64b1f!important}
+body.v12Graphics .superHb b{color:#ffd961!important;text-shadow:0 0 10px #ffc52e55!important}
+body.v12Graphics .topoverlay{gap:6px}
+body.v12Graphics .pill{border:1px solid #55788f;border-radius:8px;background:linear-gradient(180deg,#102b3d,#07151f);box-shadow:0 5px 18px #0007,inset 0 1px 0 #bdeeff16;color:#dff7ff;font-family:ui-monospace,Consolas,monospace;font-weight:900;letter-spacing:.08em}
+body.v12Graphics .msg{border:2px solid #6bd9ff;border-radius:10px;background:linear-gradient(180deg,#102c40ef,#07131eef);box-shadow:0 10px 30px #0008,0 0 18px #55d8ff24;color:#f1fbff;font-family:ui-monospace,Consolas,monospace;font-weight:900;text-shadow:0 2px 0 #0007}
+body.v12Graphics .controls{gap:8px}
+body.v12Graphics .controls button{position:relative;overflow:hidden;border:2px solid #537b95!important;border-radius:16px!important;background:linear-gradient(180deg,#173b54,#0a2030)!important;color:#eefbff!important;box-shadow:inset 0 2px 0 #ffffff18,inset 0 -5px 0 #04101a55,0 6px 16px #0008!important;font-family:ui-monospace,Consolas,monospace!important;font-weight:900!important;letter-spacing:.05em;text-shadow:0 2px 0 #0008;transition:transform .06s ease,filter .06s ease}
+body.v12Graphics .controls button::after{content:"";position:absolute;left:8%;right:8%;top:5px;height:18%;border-radius:999px;background:#ffffff12;pointer-events:none}
+body.v12Graphics .controls button:active{transform:translateY(2px) scale(.97)!important;filter:brightness(1.18)}
+body.v12Graphics .controls .jump{border-color:#5fc7ff!important;background:linear-gradient(180deg,#1b5980,#0c2b40)!important}
+body.v12Graphics .controls .ability{border-color:#aa84ef!important;background:linear-gradient(180deg,#4a3875,#241c40)!important}
+body.v12Graphics .controls .dash{border-color:#4fd9d0!important;background:linear-gradient(180deg,#235c62,#12353a)!important}
+body.v12Graphics .controls .superBtn{border-color:#f3c34d!important;background:linear-gradient(180deg,#6b531c,#312307)!important;color:#ffe681!important;box-shadow:inset 0 2px 0 #fff6b426,inset 0 -5px 0 #140d0055,0 0 17px #ffc83f25!important}
+body.v12Graphics .ga button{border:1px solid #52758b;background:linear-gradient(180deg,#122b3b,#091822);box-shadow:inset 0 1px 0 #fff1,0 4px 12px #0007}
+body.v12Graphics .v10SideHud,body.v12Graphics .v11Minimap{border:1px solid #5f8297;background:linear-gradient(180deg,#0d2637ed,#07131eed);box-shadow:0 10px 26px #0008,inset 0 1px 0 #d6f7ff10}
+body.v12Graphics .v11Minimap canvas{image-rendering:pixelated}
+body.v12Graphics #eventBanner,body.v12Graphics .v10BossCue{font-family:ui-monospace,Consolas,monospace;font-weight:900;text-shadow:0 2px 0 #0009}
+body.v12Graphics .modal .mcard{border:1px solid #58788e;background:radial-gradient(circle at 50% 0,#17384e 0,#0b1e2c 32%,#07131e 100%);box-shadow:0 25px 90px #000c,inset 0 1px 0 #dff8ff16}
+body.v12Graphics .primary{background:linear-gradient(180deg,#35bde9,#15769e)!important;border-color:#76e1ff!important;box-shadow:inset 0 1px 0 #fff5,0 6px 18px #0007!important}
+body.v12Graphics .secondary{background:linear-gradient(180deg,#18364a,#0a1d2a);border-color:#54768b;color:#e8f6ff}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:620px){
+ body.v12Graphics #canvas{border-radius:0;box-shadow:none}
+ body.v12Graphics .hud .hb{min-width:48px;padding:3px 5px;border-width:1px;border-radius:6px;box-shadow:0 3px 8px #0007}
+ body.v12Graphics .hud .hb b{font-size:10px}
+ body.v12Graphics .controls button{border-radius:12px!important;border-width:1px!important;box-shadow:inset 0 1px 0 #fff2,0 4px 10px #0007!important}
+ body.v12Graphics .msg{border-width:1px;border-radius:7px}
+}
