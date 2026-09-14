@@ -9,26 +9,49 @@
 <meta name="apple-mobile-web-app-title" content="BO Adventure">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<link rel="stylesheet" href="./style.css?v=4">
-<title>Back Office Adventure DX v4</title>
+<link rel="stylesheet" href="./style.css?v=5">
+<title>Back Office Adventure DX v5</title>
 </head>
 <body>
 <div class="wrap">
-<header class="header"><div class="logo">BACK OFFICE<span>ADVENTURE DX v4</span></div><div class="sub">Combo operative, caffè turbo, telegraph dei boss, fullscreen e riavvio rapido. Più leggibile su telefono e più cattivo quando fai bene. Una normalissima escalation aziendale.</div></header>
+<header class="header"><div class="logo">BACK OFFICE<span>ADVENTURE DX v5</span></div><div class="sub">Profili, difficoltà, obiettivi, costumi, eventi casuali, ghost run, Endless, minigioco e un boss finale che la ragione non avrebbe approvato: MENGASI.</div></header>
 
 <section id="menu" class="panel">
   <div class="stats">
     <div class="stat">Livelli<b id="stLevel">1/5</b></div><div class="stat">Record<b id="stBest">0</b></div>
     <div class="stat">Marche<b id="stStamp">0</b></div><div class="stat">Michele<b id="stMichele">🔒</b></div>
   </div>
+
+  <div class="sec">Profilo</div>
+  <div class="v5bar"><input id="profileName" maxlength="18" placeholder="Nome giocatore"><button id="profileSave" class="secondary">💾 Profilo</button><button id="leaderBtn" class="secondary">🏆 Classifica</button></div>
+
+  <div class="sec">Difficoltà</div>
+  <div id="difficulty" class="difficulty">
+    <button class="diffbtn selected" data-diff="normal">Normale<small>equilibrata</small></button>
+    <button class="diffbtn" data-diff="urgent">Urgente<small>+veloce, +25% punti</small></button>
+    <button class="diffbtn" data-diff="monthend">Fine Mese<small>caos, +60% punti</small></button>
+  </div>
+
+  <div id="dailyChallenge" class="daily"><div class="ico">📅</div><div><b>Sfida giornaliera</b><span id="dailyText">Caricamento...</span></div><div class="reward" id="dailyReward">+50</div></div>
+
+  <div class="sec">Modalità e archivio</div>
+  <div class="modegrid">
+    <button id="endlessBtn" class="modebtn"><strong>♾️</strong>Endless</button>
+    <button id="minigameBtn" class="modebtn"><strong>🗂️</strong>Smista pratiche</button>
+    <button id="archiveBtn" class="modebtn"><strong>📚</strong>Archivio</button>
+    <button id="statsBtn" class="modebtn"><strong>📈</strong>Statistiche</button>
+  </div>
+
   <div class="sec">Mappa</div><div id="map" class="map"></div>
   <div class="sec">Progressi</div><div id="progressGrid" class="progressgrid"></div>
   <div class="sec">Personaggi</div><div id="roster" class="roster"></div>
+  <div class="sec">Costumi</div><div id="costumeGrid" class="costumes"></div>
+
   <div class="actions">
     <button id="start" class="primary" disabled>Seleziona livello e personaggio</button>
-    <button id="audio" class="secondary">🔊 Audio</button><button id="ngplus" class="secondary ngplus hidden">🔥 NG+ OFF</button><button id="install" class="secondary hidden">📲 Installa</button>
+    <button id="audio" class="secondary">🔊 Audio</button><button id="ngplus" class="secondary ngplus hidden">🔥 NG+ OFF</button><button id="backupBtn" class="secondary">☁️ Backup</button><button id="install" class="secondary hidden">📲 Installa</button>
   </div>
-  <div class="note">Controlli PC: A/D o ←/→, SPAZIO/↑ per saltare, X per abilità. Su telefono trovi i quattro pulsanti sotto il gioco. Michele si sblocca completando Fine Mese.</div>
+  <div class="note">PC: A/D o ←/→, SPAZIO/↑ per saltare, X per abilità. Mobile: pulsanti o joystick virtuale. Il backup è trasferibile tra dispositivi; il cloud condiviso vero richiede un backend esterno, perché perfino i videogiochi devono compilare una pratica.</div>
 </section>
 
 <section id="game" class="panel gamepanel hidden">
@@ -39,20 +62,41 @@
   <div class="shell">
     <canvas id="canvas" width="960" height="540"></canvas>
     <div class="topoverlay"><div id="levelPill" class="pill"></div><div id="bossPill" class="pill"></div></div>
-    <div id="msg" class="msg"></div><div id="tutorialBubble" class="tutorialBubble hidden"></div>
+    <div id="msg" class="msg"></div><div id="tutorialBubble" class="tutorialBubble hidden"></div><div id="eventBanner" class="eventBanner"></div><div id="ghostTag" class="ghostTag hidden">👻 Ghost record</div>
+    <div id="joy" class="joy"><div id="joyKnob" class="joyKnob"></div><div class="joyHint">trascina • su = salto</div></div>
   </div>
   <div id="status" class="status">Caricamento...</div>
-  <div class="controls">
+  <div class="controls" id="controls">
     <button id="left">◀</button><button id="jump" class="jump">SALTO</button><button id="ability" class="ability">ABILITÀ<span id="cd" class="cd">PRONTA</span></button><button id="right">▶</button>
   </div>
-  <div class="ga"><button id="pause" class="secondary">☕ Pausa</button><button id="restart" class="secondary">↻ Riavvia</button><button id="full" class="secondary">⛶ Schermo</button><button id="back" class="secondary">↩ Menu</button></div>
+  <div class="ga"><button id="pause" class="secondary">☕ Pausa</button><button id="restart" class="secondary">↻ Riavvia</button><button id="touchMode" class="secondary">🕹️ Joystick</button><button id="swapCtrl" class="secondary">↔ Controlli</button><button id="full" class="secondary">⛶ Schermo</button><button id="back" class="secondary">↩ Menu</button></div>
 </section>
 </div>
 
 <div id="cutscene" class="modal hidden"><div class="mcard"><img id="cutFace" class="cutface"><div id="cutTitle" class="sec"></div><div id="cutLine" class="cutline"></div><button id="cutGo" class="primary">Affronta il boss</button></div></div>
 <div id="gameover" class="modal hidden"><div class="mcard"><img id="delFace" class="bigface"><h2 style="color:#ff7183">GAME OVER</h2><div class="quote">“Vai a farti un bidet e sali in ufficio da me.”</div><p id="goText"></p><div class="actions"><button id="retry" class="primary">Riprova</button><button id="gomenu" class="secondary">Menu</button></div></div></div>
-<div id="clear" class="modal hidden"><div class="mcard"><div id="stars" class="stars">★★★</div><h2 id="clearTitle">Livello completato</h2><div id="results" class="resultgrid"></div><div id="unlock" class="unlock hidden">👑 MICHELE SBLOCCATO<br>Il Responsabile è ora disponibile in modalità OP.</div><div id="ngUnlock" class="unlock hidden">🔥 NEW GAME+ SBLOCCATO<br>Nemici più rapidi, boss più cattivi, punteggi maggiorati.</div><div class="actions"><button id="next" class="primary">Livello successivo</button><button id="creditsBtn" class="primary hidden">Titoli di coda</button><button id="cmenu" class="secondary">Menu</button></div></div></div>
-<div id="credits" class="modal hidden"><div class="mcard"><img id="creditsFace" class="creditsFace"><h2>BACK OFFICE ADVENTURE DX v4</h2><div class="creditsList"><b>Cast giocabile</b><br>Eugenio · Farris · Yurii · Luca · Tiziano · Daniele · Dalila · Giada · Michele<br><br><b>Boss</b><br>Mengozzi · Gervasi<br><br><b>Game Over Department</b><br>Del Vecchio<br><br><b>Oggetti leggendari</b><br>Caffè · Marca da bollo €16 · NTW · Smart Working</div><div class="quote">“Bravi. Però c’è un’altra cosa da fare.”</div><button id="creditsMenu" class="primary">Torna al menu</button></div></div>
-<script src="./bootstrap.js?v=4" defer></script>
+<div id="clear" class="modal hidden"><div class="mcard"><div id="stars" class="stars">★★★</div><h2 id="clearTitle">Livello completato</h2><div id="results" class="resultgrid"></div><div id="objectiveResults" class="objectives"></div><div id="unlock" class="unlock hidden">👑 MICHELE SBLOCCATO<br>Il Responsabile è ora disponibile in modalità OP.</div><div id="ngUnlock" class="unlock hidden">🔥 NEW GAME+ SBLOCCATO<br>Nemici più rapidi, boss più cattivi, punteggi maggiorati.</div><div class="actions"><button id="next" class="primary">Livello successivo</button><button id="creditsBtn" class="primary hidden">Finale</button><button id="cmenu" class="secondary">Menu</button></div></div></div>
+
+<div id="upgradeModal" class="modal hidden"><div class="mcard"><div class="sec">Scelta operativa</div><h2>Scegli un potenziamento</h2><p>Tre opzioni. Una sola. Come una riunione, ma almeno questa serve.</p><div id="upgradeGrid" class="upgradeGrid"></div></div></div>
+
+<div id="archiveModal" class="modal hidden"><div class="mcard"><h2>📚 Archivio</h2><p>Documenti segreti e reperti sottratti alla burocrazia.</p><div id="archiveGrid" class="archiveGrid"></div><button class="secondary closeModal">Chiudi</button></div></div>
+<div id="statsModal" class="modal hidden"><div class="mcard"><h2>📈 Statistiche</h2><div id="statTable" class="statTable"></div><button class="secondary closeModal">Chiudi</button></div></div>
+<div id="leaderModal" class="modal hidden"><div class="mcard"><h2>🏆 Classifica locale</h2><p>Profili registrati su questo dispositivo.</p><div id="leaderTable"></div><button class="secondary closeModal">Chiudi</button></div></div>
+<div id="backupModal" class="modal hidden"><div class="mcard"><h2>☁️ Backup trasferibile</h2><p>Copia questo codice su un altro dispositivo oppure incollane uno ricevuto.</p><div class="backupBox"><textarea id="backupText"></textarea><div class="backupBtns"><button id="exportBackup" class="primary">Genera codice</button><button id="importBackup" class="secondary">Importa</button></div></div><button class="secondary closeModal">Chiudi</button></div></div>
+
+<div id="miniModal" class="modal hidden"><div class="mcard"><h2>🗂️ Smista le pratiche</h2><p id="miniTimer">20 secondi</p><div id="miniTask" class="miniTask">📄</div><div id="miniLabel" class="miniScore">0 punti</div><div id="miniChoices" class="miniChoices"></div><button id="miniClose" class="secondary hidden">Torna al menu</button></div></div>
+
+<div id="credits" class="modal hidden"><div class="mcard finaleGlow"><img id="creditsFace" class="creditsFace"><h2>BACK OFFICE ADVENTURE DX v5</h2><div class="creditsList"><b>Cast giocabile</b><br>Eugenio · Farris · Yurii · Luca · Tiziano · Daniele · Dalila · Giada · Michele<br><br><b>Boss</b><br>Mengozzi · Gervasi · <b>MENGASI</b>, fusione amministrativamente non autorizzata<br><br><b>Game Over & supervisione morale</b><br>Del Vecchio<br><br><b>Oggetti leggendari</b><br>Caffè · Marca da bollo €16 · NTW · Smart Working · Badge · Manuale · Chiave archivio</div><div class="quote">“Mengasi è stato sconfitto. Il mese è chiuso.”<br><br>Del Vecchio: “Bravi. Però c’è un’altra cosa da fare.”</div><button id="creditsMenu" class="primary">Torna al menu</button></div></div>
+
+<script>window.FACE_DATA={"Mengozzi":"./faces/Mengozzi.svg","Gervasi":"./faces/Gervasi.svg","Eugenio":"./faces/Eugenio.svg","Farris":"./faces/Farris.svg","Yurii":"./faces/Yurii.svg","Luca":"./faces/Luca.svg","Tiziano":"./faces/Tiziano.svg","Daniele":"./faces/Daniele.svg","Michele":"./faces/Michele.svg","Dalila":"./faces/Dalila.svg","Giada":"./faces/Giada.svg","DelVecchio":"./faces/DelVecchio.svg"};</script>
+<script src="./core.js?v=5" defer></script>
+<script src="./menu.js?v=5" defer></script>
+<script src="./gameplay.js?v=5" defer></script>
+<script src="./render.js?v=5" defer></script>
+<script src="./main.js?v=5" defer></script>
+<script src="./v5a.js?v=5" defer></script>
+<script src="./v5b.js?v=5" defer></script>
+<script src="./v5c.js?v=5" defer></script>
+<script src="./v5d.js?v=5" defer></script>
 </body>
 </html>
