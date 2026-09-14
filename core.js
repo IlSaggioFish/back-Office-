@@ -1,5 +1,4 @@
-const FACE_DATA = {"Mengozzi": "./faces/Mengozzi.svg", "Gervasi": "./faces/Gervasi.svg", "Eugenio": "./faces/Eugenio.svg", "Farris": "./faces/Farris.svg", "Yurii": "./faces/Yurii.svg", "Luca": "./faces/Luca.svg", "Tiziano": "./faces/Tiziano.svg", "Daniele": "./faces/Daniele.svg", "Michele": "./faces/Michele.svg", "Dalila": "./faces/Dalila.svg", "Giada": "./faces/Giada.svg", "DelVecchio": "./faces/DelVecchio.svg"};
-
+const FACE_DATA = window.FACE_DATA;
 
 'use strict';
 
