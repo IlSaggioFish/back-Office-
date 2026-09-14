@@ -8,7 +8,7 @@
     const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=()=>reject(new Error('Impossibile caricare '+src));document.body.appendChild(s);
   });
   try{
-    for(const href of ['./v7.css?v=7','./v8.css?v=8','./v9.css?v=9','./v10.css?v=10.2','./mobile.css?v=10.3','./v11.css?v=11']){const l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);}
+    for(const href of ['./v7.css?v=7','./v8.css?v=8','./v9.css?v=9','./v10.css?v=10.2','./mobile.css?v=10.3','./v11.css?v=11','./v12.css?v=12']){const l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l);}
     let faces=null;
     try{faces=JSON.parse(localStorage.getItem(FACE_CACHE)||'null');}catch(e){}
     if(!faces){
@@ -23,7 +23,7 @@
       './core.js?v=5','./menu.js?v=5','./gameplay.js?v=5','./render.js?v=5','./main.js?v=5',
       './v5a.js?v=5','./v5b.js?v=5','./v5c.js?v=5','./v5d.js?v=5',
       './v6a.js?v=6','./v6b.js?v=6','./v6c.js?v=6','./v6ui.js?v=6',
-      './v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9','./v9fix.js?v=9','./v10.js?v=10','./v10replay.js?v=10.2','./mobile.js?v=10.3','./v11maps.js?v=11','./v11mengasi.js?v=11.1','./v11clarity.js?v=11.2'
+      './v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9','./v9fix.js?v=9','./v10.js?v=10','./v10replay.js?v=10.2','./mobile.js?v=10.3','./v11maps.js?v=11','./v11mengasi.js?v=11.1','./v11clarity.js?v=11.2','./v12graphics.js?v=12'
     ])await load(src);
   }catch(err){console.error(err);fail(err.message||String(err));}
 })();
