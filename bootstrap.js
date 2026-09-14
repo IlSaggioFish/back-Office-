@@ -23,7 +23,7 @@
       './core.js?v=5','./menu.js?v=5','./gameplay.js?v=5','./render.js?v=5','./main.js?v=5',
       './v5a.js?v=5','./v5b.js?v=5','./v5c.js?v=5','./v5d.js?v=5',
       './v6a.js?v=6','./v6b.js?v=6','./v6c.js?v=6','./v6ui.js?v=6',
-      './v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9'
+      './v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9','./v9fix.js?v=9'
     ])await load(src);
   }catch(err){console.error(err);fail(err.message||String(err));}
 })();
