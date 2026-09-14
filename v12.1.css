@@ -1,0 +1,14 @@
+/* BACK OFFICE ADVENTURE DX v12.1 - CHARACTER PRESENTATION */
+body.v121Characters .person{min-height:104px;padding:9px;gap:10px;background:linear-gradient(180deg,#18364e,#10283b);box-shadow:inset 0 1px 0 #ffffff10,0 7px 18px #0004}
+body.v121Characters .person .avatar{width:68px;height:68px;border-radius:16px;border:2px solid #6edcff;box-shadow:0 0 0 3px #07131d,0 6px 16px #0007;object-fit:cover;object-position:center 24%;background:#0a1722}
+body.v121Characters .person.selected .avatar{border-color:#9ef0ff;box-shadow:0 0 0 3px #07131d,0 0 18px #53d7ff55}
+body.v121Characters .person .pn{font-size:14px;letter-spacing:.02em}
+body.v121Characters .person .pr{font-size:8px;color:#9fc5d9}
+body.v121Characters .person .pd{font-size:8px;line-height:1.35;color:#eef8ff}
+body.v121Characters .person .chips{margin-top:6px}
+body.v121Characters .person .chip{background:#0c2232;border-color:#557b92}
+body.v121Characters .lifeFaces img{width:22px;height:22px;border-radius:7px;object-position:center 24%;border-color:#6edcff}
+body.v121Characters .ability{position:relative;border-color:#b99cff!important;background:linear-gradient(180deg,#4a3a78,#241d41)!important;box-shadow:inset 0 2px 0 #ffffff16,0 0 15px #aa82ff20!important}
+body.v121Characters .ability:active{filter:brightness(1.22)}
+@media(max-width:630px){body.v121Characters .person{min-height:90px;padding:7px;gap:7px}body.v121Characters .person .avatar{width:56px;height:56px;border-radius:13px}body.v121Characters .person .pd{font-size:7px}}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:620px){body.v121Characters .person .avatar{width:52px;height:52px;border-radius:12px}body.v121Characters .person{min-height:78px}.lifeFaces img{width:18px!important;height:18px!important}}
