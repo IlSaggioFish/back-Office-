@@ -1,0 +1,11 @@
+/* BACK OFFICE ADVENTURE DX v8 - HUB, GAMEPAD, POLISH */
+.hubLaunch{background:linear-gradient(135deg,#183b58,#235f7f)!important;border-color:#5fd5ff!important}
+.hubCard{width:min(980px,98vw)!important;padding:12px!important}
+.hubTop{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.hubTop p{margin:0;color:#aec5d7;font-size:10px}.hubTop b{color:#fff}
+#hubCanvas{width:100%;height:auto;aspect-ratio:15/7;border:1px solid #52728d;border-radius:16px;background:#0b1c2a;display:block;touch-action:none}
+.hubControls{display:flex;justify-content:center;gap:8px;margin-top:8px}.hubControls button{min-width:82px;min-height:46px;border:1px solid #456881;border-radius:12px;background:#173149;color:#fff;font-weight:900}.hubControls .interact{background:#315273;color:#dff7ff}
+.gamepadBadge{display:inline-flex;align-items:center;gap:5px;border:1px solid #405f77;border-radius:999px;background:#10273a;padding:4px 8px;color:#9eb6c8;font-size:8px;margin-top:6px}.gamepadBadge.on{border-color:#61d8a1;color:#c8ffe2;background:#123629}
+.v8secretTag{position:absolute;right:8px;bottom:8px;padding:4px 7px;border-radius:999px;background:#111c2be8;border:1px solid #d7b85d;color:#ffe99b;font-size:7px;font-weight:900;pointer-events:none}
+.v8onlineNote{margin-top:8px;border:1px dashed #486680;border-radius:10px;padding:7px;color:#9db5c8;font-size:8px;line-height:1.4}
+.v8phase4{animation:v8Pulse .32s infinite alternate}@keyframes v8Pulse{from{filter:brightness(1)}to{filter:brightness(1.22)}}
+@media(max-width:600px){.hubTop{align-items:flex-start;flex-direction:column}.hubControls button{min-width:68px}.gamepadBadge{display:flex;width:max-content}.controls{grid-template-columns:repeat(3,1fr)!important}}
