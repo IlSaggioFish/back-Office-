@@ -23,7 +23,7 @@
       './core.js?v=5','./menu.js?v=5','./gameplay.js?v=5','./render.js?v=5','./main.js?v=5',
       './v5a.js?v=5','./v5b.js?v=5','./v5c.js?v=5','./v5d.js?v=5',
       './v6a.js?v=6','./v6b.js?v=6','./v6c.js?v=6','./v6ui.js?v=6',
-      './v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9','./v9fix.js?v=9','./v10.js?v=10','./v10replay.js?v=10.2','./mobile.js?v=10.3','./v11maps.js?v=11','./v11mengasi.js?v=11.1','./v11clarity.js?v=11.2','./v12graphics.js?v=12','./v12.1.js?v=12.1','./v13characters.js?v=13'
+      './v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9','./v9fix.js?v=9','./v10.js?v=10','./v10replay.js?v=10.2','./mobile.js?v=10.3','./v11maps.js?v=11','./v11mengasi.js?v=11.1','./v11clarity.js?v=11.2','./v12graphics.js?v=12','./v12.1.js?v=12.1','./v13characters.js?v=13','./v14characters.js?v=14'
     ])await load(src);
   }catch(err){console.error(err);fail(err.message||String(err));}
 })();
