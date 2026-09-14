@@ -1,5 +1,5 @@
-const CACHE='bo-adventure-dx-v10-mobile-2';
-const ASSETS=['./','./index.html','./app.html','./style.css?v=5','./v6.css?v=6','./v7.css?v=7','./v8.css?v=8','./v9.css?v=9','./v10.css?v=10.2','./mobile.css?v=10.3','./bootstrap.js?v=5','./core.js?v=5','./menu.js?v=5','./gameplay.js?v=5','./render.js?v=5','./main.js?v=5','./v5a.js?v=5','./v5b.js?v=5','./v5c.js?v=5','./v5d.js?v=5','./v6a.js?v=6','./v6b.js?v=6','./v6c.js?v=6','./v6ui.js?v=6','./v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9','./v9fix.js?v=9','./v10.js?v=10','./v10replay.js?v=10.2','./mobile.js?v=10.3','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE='bo-adventure-dx-v11-maps-1';
+const ASSETS=['./','./index.html','./app.html','./style.css?v=5','./v6.css?v=6','./v7.css?v=7','./v8.css?v=8','./v9.css?v=9','./v10.css?v=10.2','./mobile.css?v=10.3','./v11.css?v=11','./bootstrap.js?v=11','./core.js?v=5','./menu.js?v=5','./gameplay.js?v=5','./render.js?v=5','./main.js?v=5','./v5a.js?v=5','./v5b.js?v=5','./v5c.js?v=5','./v5d.js?v=5','./v6a.js?v=6','./v6b.js?v=6','./v6c.js?v=6','./v6ui.js?v=6','./v7.js?v=7','./v8.js?v=8','./v8fix.js?v=8','./v9.js?v=9','./v9fix.js?v=9','./v10.js?v=10','./v10replay.js?v=10.2','./mobile.js?v=10.3','./v11maps.js?v=11','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil((async()=>{
   const keys=await caches.keys();
