@@ -1,0 +1,121 @@
+/* BACK OFFICE ADVENTURE DX v15 - CINEMATIC GRAPHICS */
+:root{
+  --v15-cyan:#63dcff;
+  --v15-ink:#06111a;
+  --v15-glass:#091c2bdb;
+}
+
+body.v15Graphics{
+  background:
+    radial-gradient(circle at 50% -12%,#245675 0,#0a2030 31%,#050c13 74%),
+    #050c13;
+}
+body.v15Graphics .wrap{max-width:1220px}
+body.v15Graphics .header{padding:13px 0 16px}
+body.v15Graphics .header::before,body.v15Graphics .header::after{filter:drop-shadow(0 0 12px #68dcff55)}
+body.v15Graphics .logo{
+  letter-spacing:.045em;
+  text-transform:uppercase;
+  text-shadow:0 3px 0 #102c3e,0 12px 35px #000b,0 0 34px #62dbff1f;
+}
+body.v15Graphics .logo span{color:#87e7ff;text-shadow:0 0 18px #49d0ff55}
+body.v15Graphics .sub{max-width:720px;margin:12px auto 0;color:#b8d1df;letter-spacing:.03em}
+
+body.v15Graphics .panel{
+  border-color:#4c7189;
+  background:
+    linear-gradient(180deg,#ffffff07,#ffffff00 90px),
+    radial-gradient(circle at 12% 0,#1c486224,transparent 34%),
+    #0a1d2bdc;
+  box-shadow:inset 0 1px 0 #e4f8ff12,0 24px 70px #0007;
+  backdrop-filter:blur(10px);
+}
+body.v15Graphics .sec{display:flex;align-items:center;gap:8px;color:#d4e8f2}
+body.v15Graphics .sec::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#5d8aa455,transparent)}
+
+body.v15Graphics .hud{
+  display:flex;
+  gap:6px;
+  align-items:stretch;
+  overflow-x:auto;
+  scrollbar-width:none;
+  padding:2px 1px 7px;
+}
+body.v15Graphics .hud::-webkit-scrollbar{display:none}
+body.v15Graphics .hud .hb{
+  position:relative;
+  flex:1 0 78px;
+  min-height:48px;
+  display:grid;
+  align-content:center;
+  padding:5px 8px 5px 31px;
+  overflow:hidden;
+  text-align:left;
+  border:1px solid #4c7189;
+  border-radius:9px;
+  background:linear-gradient(180deg,#14354aee,#081a27ee);
+  box-shadow:inset 0 1px #fff1,0 7px 16px #0006;
+}
+body.v15Graphics .hud .hb::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#ffffff0d,transparent 42%);pointer-events:none}
+body.v15Graphics .v15HudIcon{position:absolute;left:8px;top:50%;translate:0 -50%;font-size:16px;filter:drop-shadow(0 2px 3px #0009)}
+body.v15Graphics .hud .hb b{font-size:13px;line-height:1.1;color:#f3fbff;text-shadow:0 2px 0 #0008}
+body.v15Graphics .hud .v15HeroBox{padding-left:43px;min-width:118px}
+body.v15Graphics .hud .v15HeroBox>.v15HudIcon{display:none}
+body.v15Graphics .v15HudPortrait{position:absolute;left:7px;top:7px;width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center 22%;border:2px solid var(--v15-cyan);box-shadow:0 0 0 2px #06111a,0 0 12px #62dbff55;z-index:2}
+body.v15Graphics .v15LifeBox{padding-left:30px}
+body.v15Graphics .lifeFaces{justify-content:flex-start}
+body.v15Graphics .lifeFaces img{width:21px;height:21px;border:2px solid #79dfff;box-shadow:0 2px 5px #0007}
+
+body.v15Graphics .shell{
+  border:2px solid #4e7891;
+  border-radius:14px;
+  background:#050d14;
+  box-shadow:0 22px 58px #000a,0 0 0 1px #061019,inset 0 0 35px #0009;
+}
+body.v15Graphics #canvas{filter:saturate(1.08) contrast(1.035)}
+body.v15Graphics .shell::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:12px;box-shadow:inset 0 0 55px #0008,inset 0 1px #dff8ff13}
+body.v15Graphics .pill{border-radius:7px;border-color:#628ba2;background:#071725e8;box-shadow:0 6px 18px #0007;text-transform:uppercase;letter-spacing:.08em}
+body.v15Graphics #levelPill{border-left:3px solid #66dcff}
+body.v15Graphics #bossPill{border-left:3px solid #ff5470}
+
+body.v15Graphics .controls button,body.v15Graphics .ga button{position:relative;isolation:isolate}
+body.v15Graphics .controls button::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 110%,#73ddff29,transparent 58%);opacity:0;transition:opacity .12s}
+body.v15Graphics .controls button:active::before{opacity:1}
+body.v15Graphics .controls .ability{--ability-charge:100%;background:linear-gradient(90deg,#7556b4 var(--ability-charge),#231c3c var(--ability-charge))!important}
+body.v15Graphics .status{border-color:#3f647b;background:#091b28;box-shadow:inset 0 1px #fff1}
+
+body.v15Graphics #roster .person.v14Person{transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,filter .16s ease}
+body.v15Graphics #roster .person.v14Person:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 14px 28px #0007,0 0 22px color-mix(in srgb,var(--char-accent) 18%,transparent)}
+body.v15Graphics #roster .person.v14Person.selected{transform:translateY(-2px);border-color:var(--char-accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--char-accent) 55%,transparent),0 15px 30px #0008,0 0 25px color-mix(in srgb,var(--char-accent) 20%,transparent)}
+
+body.v15Graphics .modal{backdrop-filter:blur(8px)}
+body.v15Graphics .modal .mcard{position:relative;overflow:hidden;border-radius:16px}
+body.v15Graphics .modal .mcard::before{content:"";position:absolute;left:-20%;right:-20%;top:0;height:1px;background:linear-gradient(90deg,transparent,#c9f5ff,transparent);box-shadow:0 0 22px #73dcff}
+body.v15Graphics.bossIncoming #cutscene{background:radial-gradient(circle at 50% 45%,#5e102b99,#020509f2 58%)}
+body.v15Graphics.bossIncoming #cutscene .mcard{animation:v15BossCard .48s cubic-bezier(.2,.9,.2,1) both;border-color:#ff5f78;box-shadow:0 0 0 1px #430b19,0 30px 100px #000e,0 0 50px #ff31543d}
+body.v15Graphics.bossIncoming #cutFace{animation:v15BossFace .65s cubic-bezier(.18,.9,.28,1) both;border-color:#ff647d;box-shadow:0 0 0 7px #3c0c19,0 0 34px #ff496b88}
+body.v15Graphics.bossIncoming #cutTitle{font-size:12px;color:#ff9aac;letter-spacing:.24em}
+body.v15Graphics.bossIncoming #cutLine{text-shadow:0 3px 0 #0008}
+body.v15Graphics #gameover .mcard{border-color:#9e3549;background:radial-gradient(circle at 50% 0,#4b1020,#17070d 62%,#080407);box-shadow:0 30px 100px #000e,0 0 55px #ff31512b}
+body.v15Graphics #gameover:not(.hidden) .bigface{animation:v15GameOverFace .6s cubic-bezier(.16,.9,.2,1) both}
+
+@keyframes v15BossCard{from{opacity:0;transform:scale(1.12);filter:blur(8px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+@keyframes v15BossFace{from{opacity:0;transform:translateY(-45px) scale(.72)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes v15GameOverFace{0%{opacity:0;transform:scale(1.45);filter:grayscale(1) contrast(1.5)}100%{opacity:1;transform:scale(1);filter:none}}
+
+@media(max-width:720px){
+  body.v15Graphics .hud .hb{flex-basis:70px;min-height:43px;padding-left:27px}
+  body.v15Graphics .hud .hb b{font-size:11px}
+  body.v15Graphics .v15HudIcon{left:6px;font-size:14px}
+  body.v15Graphics .hud .v15HeroBox{min-width:105px;padding-left:39px}
+  body.v15Graphics .v15HudPortrait{left:6px;top:6px;width:29px;height:29px}
+}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:620px){
+  body.v15Graphics .hud{position:fixed;z-index:96;left:calc(var(--safe-l) + 54px);right:calc(var(--safe-r) + 54px);top:calc(var(--safe-t) + 5px);pointer-events:none;opacity:.91}
+  body.v15Graphics .hud .hb{min-height:34px;flex-basis:58px;padding:3px 4px 3px 24px;background:#071927dc}
+  body.v15Graphics .hud .hb b{font-size:9px}
+  body.v15Graphics .v15HudIcon{font-size:12px;left:5px}
+  body.v15Graphics .hud .v15HeroBox{min-width:92px;padding-left:32px}
+  body.v15Graphics .v15HudPortrait{width:24px;height:24px;left:5px;top:5px}
+  body.v15Graphics .lifeFaces img{width:16px!important;height:16px!important}
+}
