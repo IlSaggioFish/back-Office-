@@ -1,0 +1,45 @@
+/* BACK OFFICE ADVENTURE DX v16 - CHARACTER OVERHAUL */
+body.v16Characters #roster{gap:12px}
+body.v16Characters #roster .person.v16Person{
+  min-height:132px;
+  padding:12px 11px;
+  border-radius:12px;
+  align-items:center;
+  background:
+    radial-gradient(circle at 14% 15%,color-mix(in srgb,var(--char-accent) 17%,transparent),transparent 31%),
+    linear-gradient(120deg,#102534,#091720 66%);
+}
+body.v16Characters #roster .person.v16Person::after{
+  content:"";position:absolute;right:-24px;bottom:-36px;width:110px;height:110px;border-radius:50%;
+  border:1px solid color-mix(in srgb,var(--char-accent) 18%,transparent);
+  box-shadow:0 0 0 18px color-mix(in srgb,var(--char-accent) 4%,transparent),0 0 0 38px color-mix(in srgb,var(--char-accent) 3%,transparent);
+  pointer-events:none;
+}
+body.v16Characters .v14AvatarWrap{flex:0 0 88px;width:88px;height:106px;margin-right:2px}
+body.v16Characters .v14AvatarWrap .avatar{left:18px;top:0;width:53px!important;height:53px!important;border-width:3px!important;object-position:center 21%;box-shadow:0 0 0 4px #061019,0 7px 17px #000a,0 0 17px color-mix(in srgb,var(--char-accent) 30%,transparent)}
+body.v16Characters .v14MiniBody,body.v16Characters .v14MiniDetail{display:none}
+.v16MiniBody{position:absolute;z-index:1;left:20px;top:48px;width:50px;height:49px;border:3px solid #061019;border-radius:14px 14px 9px 9px;background:linear-gradient(90deg,var(--char-jacket) 0 29%,var(--char-shirt) 29% 71%,var(--char-jacket) 71%);box-shadow:inset 8px 0 #00000014,inset -6px 0 #ffffff08}
+.v16MiniBody::before{content:"";position:absolute;left:18px;top:-7px;width:9px;height:11px;border-radius:4px;background:#ce9574;border:2px solid #061019}
+.v16MiniBody::after{content:"";position:absolute;left:18px;top:5px;width:8px;height:30px;background:var(--char-accent);clip-path:polygon(50% 0,100% 17%,67% 100%,33% 100%,0 17%);filter:drop-shadow(0 0 4px color-mix(in srgb,var(--char-accent) 45%,transparent))}
+.v16RoleIcon{position:absolute;z-index:4;right:1px;top:55px;display:grid;place-items:center;width:25px;height:25px;border-radius:7px;background:#07141ee8;border:1px solid var(--char-accent);font-size:13px;box-shadow:0 4px 9px #0008}
+.v16Ability{position:relative;z-index:2;margin-top:6px;color:var(--char-accent);font:800 8px/1.25 ui-monospace,Consolas,monospace;letter-spacing:.035em;text-transform:uppercase}
+.v16Meters{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:7px}
+.v16Meter{display:grid;grid-template-columns:18px 1fr;gap:4px;align-items:center;color:#83a2b4;font:700 6px ui-monospace,Consolas,monospace}
+.v16Meter i{display:block;height:4px;border-radius:99px;background:#203b4c;overflow:hidden}
+.v16Meter i::after{content:"";display:block;width:var(--meter);height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--char-accent),#effbff);box-shadow:0 0 6px var(--char-accent)}
+body.v16Characters .v14Flavor{display:none}
+body.v16Characters #roster .pn{font-size:16px}
+body.v16Characters #roster .pr{font-size:8px;color:#b9ced9;text-transform:uppercase;letter-spacing:.05em}
+body.v16Characters #roster .pd{font-size:8px;line-height:1.4;color:#e7f2f7}
+body.v16Characters #roster .person.locked .v16MiniBody,body.v16Characters #roster .person.locked .v16RoleIcon{filter:grayscale(1)}
+
+@media(max-width:700px){
+  body.v16Characters #roster .person.v16Person{min-height:116px;padding:9px 8px}
+  body.v16Characters .v14AvatarWrap{flex-basis:74px;width:74px;height:94px}
+  body.v16Characters .v14AvatarWrap .avatar{left:11px;width:49px!important;height:49px!important}
+  .v16MiniBody{left:13px;top:45px;width:46px;height:43px}
+  .v16RoleIcon{right:0;top:51px}
+  body.v16Characters #roster .pn{font-size:14px}
+  .v16Meters{gap:3px}.v16Meter{grid-template-columns:15px 1fr;gap:2px}
+}
+
