@@ -1,6 +1,6 @@
 /* Match atlas previews to the existing roster without cropping wide action poses. */
 .v19-art{display:block;position:relative;z-index:6;max-width:100%;object-fit:contain}
-.v14AvatarWrap.v19-ready{height:110px;width:80px;flex-basis:80px;display:grid;place-items:center}
+body.v19Characters .v14AvatarWrap.v19-ready{height:110px;width:80px;flex-basis:80px;display:grid;place-items:center}
 .v14AvatarWrap .v19-art{width:80px;height:110px}
 .v17-stage.v19-ready{transform:none;margin:0}
 .v17-stage .v19-art{width:198px;height:202px}

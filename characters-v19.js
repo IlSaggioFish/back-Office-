@@ -1,7 +1,7 @@
 /* Sprite atlas bounds in source pixels; order: idle, run A, run B, jump, fall/hurt, hurt/ability. */
 window.BO_CHARACTER_ATLASES = {
   "Eugenio": {
-    "src": "./assets/characters/eugenio-v19.webp",
+    "src": "./assets/characters/eugenio-v19.webp?v=19.1",
     "frames": [
       [
         169,
@@ -45,7 +45,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 5
   },
   "Michele": {
-    "src": "./assets/characters/michele-v19.webp",
+    "src": "./assets/characters/michele-v19.webp?v=19.1",
     "frames": [
       [
         134,
@@ -89,7 +89,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 0
   },
   "Daniele": {
-    "src": "./assets/characters/daniele-v19.webp",
+    "src": "./assets/characters/daniele-v19.webp?v=19.1",
     "frames": [
       [
         124,
@@ -133,7 +133,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 0
   },
   "Tiziano": {
-    "src": "./assets/characters/tiziano-v19.webp",
+    "src": "./assets/characters/tiziano-v19.webp?v=19.1",
     "frames": [
       [
         180,
@@ -177,7 +177,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 0
   },
   "Yurii": {
-    "src": "./assets/characters/yurii-v19.webp",
+    "src": "./assets/characters/yurii-v19.webp?v=19.1",
     "frames": [
       [
         159,
@@ -221,7 +221,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 0
   },
   "Farris": {
-    "src": "./assets/characters/farris-v19.webp",
+    "src": "./assets/characters/farris-v19.webp?v=19.1",
     "frames": [
       [
         73,
@@ -265,7 +265,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 0
   },
   "Luca": {
-    "src": "./assets/characters/luca-v19.webp",
+    "src": "./assets/characters/luca-v19.webp?v=19.1",
     "frames": [
       [
         71,
@@ -309,7 +309,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 0
   },
   "Dalila": {
-    "src": "./assets/characters/dalila-v19.webp",
+    "src": "./assets/characters/dalila-v19.webp?v=19.1",
     "frames": [
       [
         72,
@@ -353,7 +353,7 @@ window.BO_CHARACTER_ATLASES = {
     "ability": 0
   },
   "Giada": {
-    "src": "./assets/characters/giada-v19.webp",
+    "src": "./assets/characters/giada-v19.webp?v=19.1",
     "frames": [
       [
         58,
