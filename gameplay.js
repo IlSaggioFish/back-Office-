@@ -89,19 +89,7 @@ function update(dt,now){
   }
   if(p.y>610){damage('Sei finito nella buca. La pratica è ancora aperta.',0,true);return;}
 
-  for(const t of w.tasks){
-    if(t.dead)continue;
-    t.x=t.base+Math.sin(now/680+t.base*.01)*t.range;
-    if(hit(p,t)&&p.inv<=0){
-      if(hasSkill(ch,t.cat)){
-        t.dead=true;
-        let val=(isBackup(ch,t.cat)?12:20)*mult(ch,t.cat);
-        comboScore(val,t.x,t.y); p.vy=-330; sfx('good');
-        $('#status').textContent=`✅ ${CAT[t.cat]} gestita.`;
-        if(ch.n==='Giada'&&t.cat==='PERM'){game.permCount++;if(game.permCount%5===0)game.shield++;}
-      } else damage(`${CAT[t.cat]} non è tra le competenze di ${ch.n}.`,p.x<t.x?-1:1);
-    }
-  }
+  updateWorkTasks(dt,now);
 
   for(const e of w.enemies){
     if(e.dead)continue;

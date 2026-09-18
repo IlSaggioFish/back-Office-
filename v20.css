@@ -1,0 +1,5 @@
+.v11Minimap{width:min(220px,27%);opacity:.9;padding:3px 5px}.v11MapTitle{display:none}
+#workBar{display:flex;gap:12px;align-items:center;justify-content:space-between;background:#122330;border:1px solid #506879;border-radius:10px;padding:9px 12px;margin:8px 0;color:#deedf5;font:600 12px system-ui}
+#workButton{flex-shrink:0;touch-action:none;user-select:none;min-height:42px;background:#225267;color:#fff;border:1px solid #99d4e5;border-radius:8px;padding:8px 12px;font-weight:800}#workButton:disabled{opacity:.4}#workButton:active{background:#307a87}
+@media(max-width:760px){#workBar{font-size:10px;padding:6px;gap:6px}.v11Minimap{width:26%}#workButton{font-size:10px}}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:620px){body.bo-mobile-game #workBar{position:fixed;left:30%;right:30%;bottom:4px;z-index:110;margin:0;background:#10202cf0}body.bo-mobile-game #workHint{display:none}body.bo-mobile-game #workButton{width:100%}body.bo-mobile-game .v11Minimap{width:22vw;top:45px;bottom:auto}}

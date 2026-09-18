@@ -120,7 +120,7 @@ function makeLevel(idx){
     w.hints=[
       {x:220,text:'← → MUOVITI'},
       {x:560,text:'SPAZIO / SALTO'},
-      {x:900,text:'Prendi solo i task compatibili'},
+      {x:900,text:'Tieni E vicino alle pratiche per gestirle'},
       {x:1500,text:'☕ Macchinetta = checkpoint'},
       {x:1750,text:'Ci sono aree segrete…'}
     ];
@@ -145,7 +145,7 @@ function startGame(){
   $('#menu').classList.add('hidden'); $('#game').classList.remove('hidden');
   $('#lvhud').textContent=selectedLevel+1; $('#charhud').textContent=ch.n;
   $('#levelPill').textContent=`L${selectedLevel+1} • ${L.lv.name}${ngPlus?' • NG+':''}`;
-  $('#status').textContent=selectedLevel===0?'Tutorial: muoviti verso destra e prova i comandi.':'Raggiungi la fine. I task compatibili si raccolgono; il resto si evita.';
+  $('#status').textContent=selectedLevel===0?'Tutorial: muoviti verso destra e prova i comandi.':'Tieni E / GESTISCI vicino alle pratiche. Fuori ruolo puoi inoltrarle.';
   $('#bossPill').classList.remove('show');
   updateHUD(); last=performance.now(); cancelAnimationFrame(raf);
   startMusic(L.lv.theme);

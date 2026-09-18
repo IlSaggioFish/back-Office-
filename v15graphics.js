@@ -121,7 +121,7 @@
     ctx.globalAlpha=.035;ctx.fillStyle='#dff7ff';for(let y=2;y<540;y+=4)ctx.fillRect(0,y,960,1);ctx.restore();
   }
   const oldDraw=draw;
-  draw=function(){oldDraw();if(!game)return;drawFx();foreground();};
+  draw=function(){oldDraw();if(!game)return;drawFx();};
 
   const oldBegin=beginCutscene;
   beginCutscene=function(){oldBegin();document.body.classList.add('bossIncoming');if(game){const title=$('#cutTitle');if(title)title.textContent=(game.lv.boss==='Doppio'?'SCONTRO FINALE':game.lv.boss||'BOSS')+' • IN ARRIVO';}};
