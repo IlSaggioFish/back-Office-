@@ -1,0 +1,7 @@
+/* v22: mission layer for professional activities. */
+#missionBar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 0;padding:6px 10px;border:1px solid #9b7b38;border-radius:9px;background:linear-gradient(90deg,#292315,#18202a);color:#ffe9a1;font:700 10px system-ui;letter-spacing:.03em}
+#missionHint{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#missionState{color:#fff4be;white-space:nowrap}
+.v22-hud{border-color:#9b7b38!important;background:#2a2518!important}
+.v22-hud b{color:#ffe48b}
+@media(max-width:760px){#missionBar{font-size:9px;padding:5px 7px;gap:6px}.v22-hud{font-size:10px}}
