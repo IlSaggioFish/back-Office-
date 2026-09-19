@@ -1,0 +1,20 @@
+/* v21: combat layer for the "Assalto all'Open Space" pilot. */
+#combatBar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0;padding:7px 10px;border:1px solid #416b80;border-radius:10px;background:linear-gradient(90deg,#0d2634,#12202d);color:#dff7ff;font:700 11px system-ui;letter-spacing:.02em}
+#combatHint{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#shoot{touch-action:none;user-select:none;background:linear-gradient(180deg,#a64e5d,#6d2739);border-color:#ff9aa4;min-width:92px}
+#shoot:active{transform:translateY(1px);filter:brightness(1.2)}
+#shoot small{display:block;font-size:9px;opacity:.8}
+.v21-hud{border-color:#4b8196!important;background:#102936!important}
+.v21-hud b{color:#bceeff}
+.v21-control{box-shadow:0 0 0 1px #ff687733,0 0 14px #ff68771c}
+@keyframes v21Flash{0%{opacity:1;transform:scale(1)}100%{opacity:.35;transform:scale(1.12)}}
+#combatBar.hot{border-color:#ff778a;box-shadow:0 0 18px #ff4e691f}
+@media(max-width:760px){
+  #combatBar{font-size:10px;padding:6px;gap:6px}
+  #shoot{min-width:76px;font-size:11px;padding:8px 7px}
+  #shoot small{font-size:8px}
+}
+@media(pointer:coarse) and (orientation:landscape) and (max-height:620px){
+  body.bo-mobile-game #combatBar{position:fixed;left:2%;right:2%;top:4px;z-index:111;margin:0;background:#10202cf0}
+  body.bo-mobile-game #combatHint{display:none}
+}
