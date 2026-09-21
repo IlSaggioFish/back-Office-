@@ -18,6 +18,7 @@ function updateWorkTasks(dt,now){
     const profile=workProfile(game.ch,t.cat);
     t.workProgress=(t.workProgress||0)+dt;
     if(t.workProgress>=profile.time){
+      if(window.v23ValidateTask&&!window.v23ValidateTask(t))return;
       t.dead=true;t.workProgress=0;game.workDone=(game.workDone||0)+1;
       comboScore(profile.score,t.x,t.y);sfx('good');
       if(hasSkill(game.ch,t.cat)){
@@ -88,3 +89,4 @@ function updateWorkTasks(dt,now){
   const logo=document.querySelector('.header .logo span');if(logo)logo.textContent='ADVENTURE DX v20';
   const sub=document.querySelector('.header .sub');if(sub)sub.textContent='Mappe leggibili · Attività di reparto: avvicinati e tieni E / GESTISCI. Gli specialisti lavorano più velocemente; fuori ruolo puoi inoltrare.';
 })();
+
