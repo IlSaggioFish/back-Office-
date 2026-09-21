@@ -174,6 +174,11 @@
     ctx.restore();
   }
   draw=function(){previousDraw();drawRoleOverlay();};
+  const versionLabel=document.querySelector('.header .logo span');
+  if(versionLabel)versionLabel.textContent='ADVENTURE DX v22';
+  document.title='Back Office Adventure DX v22';
+  const creditsTitle=document.querySelector('#credits h2');
+  if(creditsTitle)creditsTitle.textContent='BACK OFFICE ADVENTURE DX v22';
   installMissionUI();
   updateHUD();
 })();
