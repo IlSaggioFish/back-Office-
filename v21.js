@@ -84,7 +84,7 @@
   }
   function aimVector(){
     const p=game.p,f=p.facing||1;
-    if(keys.aimDown)return {vx:f*560,vy:220};
+    if(keys.aimDown)return {vx:f*weaponConfig().speed,vy:0};
     if(keys.jump&&!p.onGround)return {vx:f*570,vy:-300};
     return {vx:f*weaponConfig().speed,vy:0};
   }
@@ -101,7 +101,7 @@
     }
     if(Number.isFinite(w.ammo))w.ammo--;
     game.fireReady=now+cfg.cooldown;game.shots++;
-    sfx('shoot');
+    sfx('shoot');if(window.bo24Fired)window.bo24Fired(now);
   }
   function destroyEnemy(e){
     e.dead=true;game.kills++;
@@ -136,21 +136,21 @@
       if(b.life<=0||b.x<-80||b.x>w.w+80||b.y<-80||b.y>600){b.dead=true;continue;}
       for(const d of w.destructibles||[]){
         if(d.dead||!hit(b,d))continue;
-        d.hp-=b.damage;b.dead=true;particle(b.x,b.y,'✦','#ffe378');
+        d.hp-=b.damage;b.dead=true;if(window.bo24Impact)window.bo24Impact(b.x,b.y);particle(b.x,b.y,'✦','#ffe378');
         if(d.hp<=0)destroyCrate(d);else sfx('shotHit');
         break;
       }
       if(b.dead)continue;
       for(const r of w.rescues||[]){
         if(r.rescued||!hit(b,r))continue;
-        r.hp-=b.damage;b.dead=true;particle(b.x,b.y,'✦','#9feaff');
+        r.hp-=b.damage;b.dead=true;if(window.bo24Impact)window.bo24Impact(b.x,b.y);particle(b.x,b.y,'✦','#9feaff');
         if(r.hp<=0)rescueAlly(r);else sfx('shotHit');
         break;
       }
       if(b.dead)continue;
       for(const e of w.enemies){
         if(e.dead||!e.combat||!hit(b,e))continue;
-        e.combatHp-=b.damage;e.hitFlash=now+100;b.dead=true;particle(b.x,b.y,'✦','#ffbac2');
+        e.combatHp-=b.damage;e.hitFlash=now+100;b.dead=true;if(window.bo24Impact)window.bo24Impact(b.x,b.y);particle(b.x,b.y,'✦','#ffbac2');
         if(e.combatHp<=0)destroyEnemy(e);else sfx('shotHit');
         break;
       }

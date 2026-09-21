@@ -97,7 +97,7 @@
     const before=new Set((game?.w?.tasks||[]).filter(t=>t.dead));
     previousUpdateWorkTasks(dt,now);
     if(!game)return;
-    for(const t of game.w.tasks||[])if(t.dead&&!before.has(t))applyTaskEffect(t);
+    for(const t of game.w.tasks||[])if(t.dead&&!t.v22Applied)applyTaskEffect(t);
   };
 
   function enforceGates(){
@@ -182,3 +182,4 @@
   installMissionUI();
   updateHUD();
 })();
+
